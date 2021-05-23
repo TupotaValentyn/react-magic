@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Card, { CardProps } from './components/Card/Card';
+import { uiLibRoutes } from './config/routes';
 
 function App() {
+  const cardProps: CardProps = {
+    title: 'Card Title',
+    description: 'lorem ipsum',
+    alt: 'card-image',
+    imageSize: 300
+  }
+  console.log(uiLibRoutes);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Card {...cardProps} />
     </div>
   );
 }
